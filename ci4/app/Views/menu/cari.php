@@ -60,7 +60,7 @@ if (isset($_GET['page'])) {
         </table>
 
   
-        <?= $pager->makeLinks(1,$tampil,$total,'bootstrap') ?>
+        <?= $pager->makeLinks(1,$tampil,$total,'template') ?>
     </div>
 </div>
 

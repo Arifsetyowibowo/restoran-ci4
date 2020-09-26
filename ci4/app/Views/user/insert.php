@@ -3,6 +3,7 @@
 <?= $this->section('content') ?>
 
 
+
 <div class="col">
     <?php
     if (!empty(session()->getFlashdata('info'))) {
@@ -21,32 +22,33 @@
 </div>
 
 
+
 <div class="col">
     <h1> INSERT DATA </h1>
 </div>
 
 
 <div class="col-7">
-    <form action="<?= base_url('/admin/menu/insert') ?>" method="post" enctype="multipart/form-data">
+    <form action="<?= base_url('/admin/user/insert') ?>" method="post">
         <div class="form-group">
-        <label for="kategori">Kategori</label>
-            <select class="form-control" name="idkategori" id="idkategori">
-                <?php foreach ($kategori as $key => $value) : ?>
-                    <option value="<?php echo $value['idkategori']; ?>"><?php echo $value['kategori']; ?></option>
+            <label for="user">User</label>
+            <input type="text" class="form-control" name="user" id="" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" name="email" id="" required>
+        </div>
+        <div class="form-group">
+            <label for="user">Password</label>
+            <input type="password" class="form-control" name="password" id="" required>
+        </div>
+        <div class="form-group">
+        <label for="level">Posisi</label>
+            <select class="form-control" name="level" id="level">
+                <?php foreach ($level as $key ) : ?>
+                    <option value="<?php echo $key ?>"><?php echo $key ?></option>
                 <?php endforeach; ?>
             </select>
-        </div>
-        <div class="form-group">
-            <label for="menu">Menu</label>
-            <input type="text" class="form-control" name="menu" id="" required>
-        </div>
-        <div class="form-group">
-            <label for="harga">Harga</label>
-            <input type="number" class="form-control" name="harga" id="" required>
-        </div>
-        <div class="form-group">
-            <label for="gambar">Gambar</label>
-            <input type="file" name="gambar" id="" required>
         </div>
         <button type="submit" value="SIMPAN" name="simpan" class="btn btn-primary">Simpan</button>
     </form>

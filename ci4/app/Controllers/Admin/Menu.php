@@ -67,6 +67,7 @@ class Menu extends BaseController
 		$data = [
 			'kategori' => $kategori
 		];
+
 		echo view("menu/insert",$data);
 	}
 	public function insert()
@@ -74,21 +75,26 @@ class Menu extends BaseController
 		$request = \Config\Services::request();
 		$file = $request->getFile('gambar');
 		$name = $file->getName();
-		$model = new Kategori_M();
-
 		$data = [
-			
+			'idkategori' => $request->getPost('idkategori'),
+			'menu' => $request->getPost('menu'),
+			'gambar' => $name,
+			'harga' => $request->getPost('harga')
 		];
-
-
-		// if ($model->insert($_POST) === false) {
-		// 	$error = $model->errors();
-		// 	//echo $error['kategori'];
-		// 	session()->setFlashdata('info', '<div class="alert alert-danger" type="hidden" >' . $error['kategori'] . '</div>');
-		// 	return redirect()->to(base_url('/admin/kategori/create'));
-		// } else {
-		// 	return redirect()->to(base_url('/admin/kategori'));
-		// }
+		$model = new Menu_M();
+		
+		if ($model->insert($data)===true) {
+			$file->move('./uploud');	
+			return redirect()->to(base_url('/admin/menu'));
+		} else {
+			$error = $model->errors();
+			session()->setFlashdata('info', $error);
+			return redirect()->to(base_url('/admin/menu/create'));
+		}
+		
+		
+		
+	
 	}
 	public function option()
 	{
@@ -99,8 +105,68 @@ class Menu extends BaseController
 			'kategori' => $kategori
 		];
 		return view('template/option',$data);
-    }
+	}
 	
+	public function update()
+	{
+		$model = new Menu_M();
+		$request = \Config\Services::request();
+		$id = $request->getPost('idmenu');
+		$file = $request->getFile('gambar');
+		$name = $file->getName();
+
+
+		if (empty($name)) {
+			$name = $this->request->getPost('gambar');
+		} else {
+			$file->move('./uploud');	
+		}
+		
+
+
+		$data = [
+			'idkategori' => $this->request->getPost('idkategori'),
+			'menu' => $this->request->getPost('menu'),
+			'gambar' => $name,
+			'harga' => $this->request->getPost('harga'),
+			
+		];
+
+		
+		
+		
+
+		if ($model->update($id,$data) === true	) {
+			return redirect()->to(base_url('/admin/menu'));
+		} else {
+			$error = $model->errors();
+			session()->setFlashdata('info', $error);
+			return redirect()->to(base_url('/admin/menu/find/'.$id));
+		}
+	
+		
+	}
+	public function find($id = null)
+	{
+
+		$model = new Menu_M();
+		$menu = $model->find($id);
+
+		$modelkat = new Kategori_M();
+		$kategori = $modelkat->findAll();
+
+
+
+		$judul = 'UPDATE DATA';
+
+		$data = [
+			'judul' => $judul,
+			'menu' => $menu,
+			'kategori' => $kategori
+		];
+
+		return view('menu/update', $data);
+	}
 	public function delete($id = null)
 	{
 		$model = new Menu_M();

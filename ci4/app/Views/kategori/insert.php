@@ -3,9 +3,17 @@
 <?= $this->section('content') ?>
 
 
-<?php
-echo session()->getFlashdata('info');
-?>
+<div class="col">
+    <?php
+    if (!empty(session()->getFlashdata('info'))) {
+        echo '<div class="alert alert-danger" role="alert">';
+        echo session()->getFlashdata('info');
+   
+        echo '</div>';
+    }
+    
+    ?>
+</div>
 
 
 
