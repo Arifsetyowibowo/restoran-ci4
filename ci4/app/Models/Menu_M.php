@@ -24,6 +24,11 @@ class Menu_M extends Model
         ],
 
     ];
+
+    public function getProduct($id)
+    {
+        return $this->db->table($this->table)->where('idmenu', $id)->get()->getRowArray();
+    }
     
    
 }
