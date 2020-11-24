@@ -49,10 +49,10 @@ class User extends BaseController
 			$model = new User_M();
 			if ($model->insert($data) === false) {
 				$error = $model->errors();
-				session()->setFlashdata('info', $error['kategori']);
-				return redirect()->to(base_url('/admin/kategori/create'));
+				session()->setFlashdata('info', $error['user']);
+				return redirect()->to(base_url('/admin/user/create'));
 			} else {
-				return redirect()->to(base_url('/admin/kategori'));
+				return redirect()->to(base_url('/admin/user'));
 			}
 		}
 	}

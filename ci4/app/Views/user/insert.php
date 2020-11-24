@@ -7,14 +7,9 @@
 <div class="col">
     <?php
     if (!empty(session()->getFlashdata('info'))) {
-        echo '<div class="alert alert-danger" role="alert">';
-        $error = session()->getFlashdata('info');
-
-        foreach ($error as $key => $value) {
-            echo $key.' => '.$value.'<br>';
-            
-        }
-   
+        echo '<div class="alert alert-danger font-weight-bold text-center" role="alert">';
+        echo session()->getFlashdata('info');
+        echo ' !!!';
         echo '</div>';
     }
     

@@ -25,7 +25,7 @@
 					<?php if ($data['idkategori'] === $value['idkategori']) { ?>
 						<article class="col-lg-3 col-md-4 col-sm-6 col-12 tm-gallery-item" >
 							<figure>
-								<img src="<?= base_url('/upload/' . $data['gambar'] . '') ?>" alt="Image" class="img-fluid tm-gallery-img" />
+								<img src="<?= base_url('/uploud/' . $data['gambar'] . '') ?>" style="height: 225px; " alt="Image" class="img-fluid tm-gallery-img" />
 								<figcaption>
 									<h4 class="tm-gallery-title"><?= $data['menu'] ?></h4>
 									<p class="tm-gallery-description"><?= $data['harga'] ?></p>
@@ -49,9 +49,9 @@
 			</div>
 			<div class="col-md-6">
 				<div class="tm-description-box">
-					<h4 class="tm-gallery-title">Maecenas nulla neque</h4>
-					<p class="tm-mb-45">Redistributing this template as a downloadable ZIP file on any template collection site is strictly prohibited. You will need to <a rel="nofollow" href="https://templatemo.com/contact">talk to us</a> for additional permissions about our templates. Thank you.</p>
-					<a href="about.html" class="tm-btn tm-btn-default tm-right">Read More</a>
+					<h4 class="tm-gallery-title">The Garden Resto</h4>
+					<p class="tm-mb-45">The Garden Resto adalah restoran yang berada dipusat kota sidoarjo rencana nya buka pada tahun 2026 semuga saya bisa mewujudkannya dengan mimpi mimpi yang ada saya kumpulkan menjadi satu teks ini hanya ada untuk mengisi bagian yang kosong </p>
+					
 				</div>
 			</div>
 		</div>

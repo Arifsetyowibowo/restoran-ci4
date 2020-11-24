@@ -7,19 +7,12 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Restoran ku</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet" />
+	<link href="<?= base_url('asset/css/checkout.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('asset/css/cart.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('asset/css/templatemo-style.css') ?>" rel="stylesheet" />
 	<link href="<?= base_url('fontawesome/css/all.css') ?>" rel="stylesheet" />
 
 </head>
-<!--
-
-Simple House
-
-https://templatemo.com/tm-539-simple-house
-
--->
-
 <body>
 
 	<div class="container">
@@ -70,6 +63,7 @@ https://templatemo.com/tm-539-simple-house
 	</div>
 	<script src="<?= base_url('asset/js/jquery.min.js') ?>"></script>
 	<script src="<?= base_url('asset/js/cart.js') ?>"></script>
+	<script src="<?= base_url('asset/js/checkout.js') ?>"></script>
 	<script src="<?= base_url('asset/js/parallax.min.js') ?>"></script>
 	<script>
 		$(document).ready(function() {

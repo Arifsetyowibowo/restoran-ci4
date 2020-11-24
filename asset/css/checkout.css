@@ -1,0 +1,138 @@
+#checkout {
+  background-color: #f9f7ea;
+  padding: 20px;
+  margin: 50px 50px 50px 50px;
+  position: relative;
+  top: 7%;
+  height: 600px;
+}
+
+.steps {
+  font-family: "Copperplate";
+  font-size: 2em;
+  color: #03a075;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+#form-section1,
+#form-section2 {
+  display: inline block;
+  float: left;
+  width: 30%
+}
+
+#form-section1 {
+  margin-left: 5%;
+}
+
+#form-section2 {
+  margin-left: 18%;
+}
+
+.checkout-field,
+textarea,
+#productList,
+#shipping-type,
+#pay-method,
+#checkout table {
+  font-family: "Calibri";
+  font-size: 1em;
+  padding: 3px;
+  border-radius: 3px;
+  border: 1px solid #03a075;
+  border-top: 2px solid #03a075;
+  border-left: 2px solid #03a075;
+  margin: 5px 1% 2px 1%;
+}
+
+#shipping-type p {
+  font-weight: bold;
+  line-height: 0.5em;
+}
+
+#shipping-type,
+#pay-method {
+  background-color: white;
+  font-family: "Century Gothic";
+  padding: 10px;
+}
+
+.steps {
+  font-family: "Century Gothic";
+}
+
+#checkout-button {
+  padding: 5px;
+  font-family: "Calibri";
+  font-size: 18px;
+  border-radius: 5px;
+  border: 2px solid #03a075;
+  background-color: #03a075;
+  color: white;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+#checkout-button:hover {
+  border: 2px solid #018e67;
+  background-color: #018e67;
+}
+
+#checkout a {
+  color: #018e67;
+  font-family: "Century Gothic";
+  font-size: 1em
+}
+
+#checkout table td {
+  border-bottom: 2px solid #018e67;
+  padding: 2px;
+  font-family: "Century Gothic";
+}
+
+#checkout table td:nth-child(1) {
+  font-weight: bold;
+}
+
+
+
+/********MODAL BOX STYLING *******/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.modal-content {
+  font-family: "Century Gothic";
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+.closeModal {
+  color: #03a075;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeModal:hover,
+.closeModal:focus {
+  color: #018e67;
+  text-decoration: none;
+  cursor: pointer;
+}

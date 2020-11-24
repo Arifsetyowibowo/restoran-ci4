@@ -17,7 +17,7 @@
     <?php foreach ($cart as $key => $value) : ?>
         <div class="product">
             <div class="product-image">
-                <img src="https://s.cdpn.io/3/dingo-dog-bones.jpg">
+                <img src="<?= base_url('/uploud/' . $value['gambar'] . '') ?>">
             </div>
             <div class="product-details">
                 <div class="product-title"><?= $value['name'] ?></div>
