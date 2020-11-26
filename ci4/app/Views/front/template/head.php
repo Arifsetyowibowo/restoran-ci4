@@ -13,6 +13,7 @@
 	<link href="<?= base_url('fontawesome/css/all.css') ?>" rel="stylesheet" />
 
 </head>
+
 <body>
 
 	<div class="container">
@@ -22,7 +23,7 @@
 			<div class="parallax-window" data-parallax="scroll" data-image-src="<?= base_url('asset/img/simple-house-01.jpg') ?>">
 				<div class="tm-header">
 					<div class="row tm-header-inner">
-						<div class="col-md-6 col-12">
+						<div class="col-md-3 col-12">
 							<div class="tm-site-text-box">
 								<h1 class="tm-site-title">Restoran Ku</h1>
 
@@ -34,10 +35,11 @@
 							$jml_keranjang = $jml_keranjang + $value['qty'];
 						}
 						?>
-						<nav class="col-md-6 col-12 tm-nav">
+						<nav class="col-md-8 col-12 tm-nav">
 							<ul class="tm-nav-ul">
-								<li class="tm-nav-li"><a href="<?= base_url('/home') ?>" class="tm-nav-link active">Home</a></li>
-								<li class="tm-nav-li"><i class="fas fa-shopping-cart"></i> &nbsp;<a href="<?= base_url('/keranjang') ?>" class="tm-nav-link"> <?= $jml_keranjang ?></a></li>
+								<li class="tm-nav-li"><a href="<?= base_url('/home') ?>" class="tm-nav-link">Home</a></li>
+								<li class="tm-nav-li"><a href="<?= base_url('/history') ?>" class="tm-nav-link">History</a></li>
+								<li class="tm-nav-li tab"><i class="fas fa-shopping-cart"></i> &nbsp;<a href="<?= base_url('/keranjang') ?>" class="tm-nav-link"> <?= $jml_keranjang ?></a></li>
 								<?php if (!empty(session()->get('namapelanggan'))) : ?>
 									<li class="tm-nav-li"><i class="fas fa-user"></i> &nbsp;<a class="tm-nav-link"> <?= session()->get('namapelanggan') ?></a>
 									</li>
@@ -45,7 +47,7 @@
 								<?php if (!empty(session()->get('namapelanggan'))) { ?>
 									<li class="tm-nav-li"><i class="ti-power-off"></i><a href="<?= base_url('logout') ?>" class="tm-nav-link">Logout</a></li>
 								<?php } else { ?>
-									<li class="tm-nav-li"><i class="ti-power-off"></i><a href="<?= base_url('login') ?>" class="tm-nav-link">Login</a></li>
+									<li class="tm-nav-li tab"><i class="ti-power-off"></i><a href="<?= base_url('login') ?>" class="tm-nav-link ">Login</a></li>
 								<?php } ?>
 							</ul>
 						</nav>
@@ -61,10 +63,12 @@
 			<p>Copyright &copy; 2020 Arif Setyo Wibowo</p>
 		</footer>
 	</div>
+	
 	<script src="<?= base_url('asset/js/jquery.min.js') ?>"></script>
+	
+	<script src="<?= base_url('asset/js/parallax.min.js') ?>"></script>
 	<script src="<?= base_url('asset/js/cart.js') ?>"></script>
 	<script src="<?= base_url('asset/js/checkout.js') ?>"></script>
-	<script src="<?= base_url('asset/js/parallax.min.js') ?>"></script>
 	<script>
 		$(document).ready(function() {
 			// Handle click on paging links

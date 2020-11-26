@@ -29,9 +29,7 @@ class Login extends BaseController
 
           
             
-        } else {
-            # code...
-        }
+        } 
         
 		return view('template/login',$data);
 	}

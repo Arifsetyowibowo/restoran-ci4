@@ -30,8 +30,9 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
- $routes->get('/admin/login', 'Admin\Login::index');
+
 // $routes->get('kategori/(:any)', 'admin\kategori::selectWhere/$1');
+$routes->add('/','Front\Home::index');
 $routes->group('/',function($routes){
 	$routes->add('logout','Auth::logout');
 	$routes->add('keranjang','Cart::index');
@@ -49,6 +50,8 @@ $routes->group('/',['filter' => 'Auth2'],function($routes){
 	$routes->add('bayar', 'Cart::insertorder');
 	$routes->add('success', 'Checkout::sukses');
 });
+
+ $routes->get('/admin/login', 'Admin\Login::index');
 
 $routes->group('admin', ['filter' => 'Auth'] ,function($routes){
 
