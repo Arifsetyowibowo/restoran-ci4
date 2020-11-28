@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 // $routes->get('kategori/(:any)', 'admin\kategori::selectWhere/$1');
-$routes->add('/','Front\Home::index');
+$routes->add('/','Home::index');
 $routes->group('/',function($routes){
 	$routes->add('logout','Auth::logout');
 	$routes->add('keranjang','Cart::index');

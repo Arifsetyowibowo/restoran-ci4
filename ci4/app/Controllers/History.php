@@ -17,6 +17,7 @@ class History extends BaseController
         $orderdetail = $query->getResultArray();
         $cart = \Config\Services::cart();
 
+        
         $data = [
             'judul' => "HISTORY PEMBELIAN",
             'orderdetail'  => $orderdetail,
@@ -24,6 +25,7 @@ class History extends BaseController
 			'total' => $cart->total(),
         ];
         return view('front/history',$data);
-	}
+    }
+    
 
 }

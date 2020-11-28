@@ -46,18 +46,7 @@ class Auth extends BaseController
         return view('front/login', $data);
     }
 
-    public function viewregister()
-    {
-        $cart = \Config\Services::cart();
-        
-        $data = [
-            'cart'    => $cart->contents(),
-            'total' => $cart->total(),
-            'judul' => "REGISTER PELANGGAN"
-        ];
-
-        return view('front/register', $data);
-    }
+   
 
     public function authlogin()
     {

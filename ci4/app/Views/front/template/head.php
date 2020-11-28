@@ -37,10 +37,11 @@
 						?>
 						<nav class="col-md-8 col-12 tm-nav">
 							<ul class="tm-nav-ul">
-								<li class="tm-nav-li"><a href="<?= base_url('/home') ?>" class="tm-nav-link">Home</a></li>
-								<li class="tm-nav-li"><a href="<?= base_url('/history') ?>" class="tm-nav-link">History</a></li>
+								<li class="tm-nav-li"><a href="<?= base_url() ?>" class="tm-nav-link">Home</a></li>
+								
 								<li class="tm-nav-li tab"><i class="fas fa-shopping-cart"></i> &nbsp;<a href="<?= base_url('/keranjang') ?>" class="tm-nav-link"> <?= $jml_keranjang ?></a></li>
 								<?php if (!empty(session()->get('namapelanggan'))) : ?>
+									<li class="tm-nav-li"><a href="<?= base_url('/history') ?>" class="tm-nav-link">History</a></li>
 									<li class="tm-nav-li"><i class="fas fa-user"></i> &nbsp;<a class="tm-nav-link"> <?= session()->get('namapelanggan') ?></a>
 									</li>
 								<?php endif ?>
