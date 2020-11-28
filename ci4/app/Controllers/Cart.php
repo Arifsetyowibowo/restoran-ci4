@@ -10,6 +10,7 @@ class Cart extends BaseController
         $cart = \Config\Services::cart();
 
         $data = [
+            'totalitem' => $cart->totalItems(),
             'cart' => $cart->contents(),
             'total' => $cart->total(),
             'judul' => "KERANJANG"

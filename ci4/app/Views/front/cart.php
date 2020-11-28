@@ -2,8 +2,14 @@
 
 <?= $this->section('content') ?>
 
-
+<?php if ($totalitem === 0) : ?>
+        <div class="alert alert-danger text-center" role="alert" style="margin: 30px; ">
+            Keranjang Kosong ,Silahkan Belanja Terlebih Dahulu <a href="<?= base_url() ?>"
+                class="alert-link">&nbsp; Home</a>
+        </div>
+        <?php else : ?>
 <div class="shopping-cart tm-container-inner">
+
 
     <div class="column-labels">
         <label class="product-image">Gambar</label>
@@ -63,6 +69,7 @@
     <a href="<?= base_url() ?>"  class="btn" style="text-decoration: none; color:white;">Continue shopping</a>
     </button>
 </div>
+<?php endif ?>
 
 
 <script>
