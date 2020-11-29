@@ -30,27 +30,50 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="<?= base_url('admin')?>"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('/admin/kategori') ?>"><i class="menu-icon fa fa-table"></i>Kategori</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('/admin/menu') ?>"><i class="menu-icon fa fa-table"></i>Menu</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('/admin/order') ?>"><i class="menu-icon fa fa-table"></i>Order</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('/admin/orderdetail') ?>"><i class="menu-icon fa fa-table"></i>Order Detail</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('/admin/pelanggan') ?>"><i class="menu-icon fa fa-table"></i>Pelanggan</a>
-                    </li>
-                    <li>
-                        <a href="<?= base_url('/admin/user') ?>"><i class="menu-icon fa fa-table"></i>User</a>
-                    </li>
+                    <?php if ($level === "Admin") : ?>
+                        <li>
+                            <a href="<?= base_url('admin') ?>"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/kategori') ?>"><i class="menu-icon fa fa-table"></i>Kategori</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/menu') ?>"><i class="menu-icon fa fa-table"></i>Menu</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/order') ?>"><i class="menu-icon fa fa-table"></i>Order</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/orderdetail') ?>"><i class="menu-icon fa fa-table"></i>Order Detail</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/pelanggan') ?>"><i class="menu-icon fa fa-table"></i>Pelanggan</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/user') ?>"><i class="menu-icon fa fa-table"></i>User</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($level === "Kasir") : ?>
+                        <li>
+                            <a href="<?= base_url('/admin/order') ?>"><i class="menu-icon fa fa-table"></i>Order</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/orderdetail') ?>"><i class="menu-icon fa fa-table"></i>Order Detail</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($level === "Koki") : ?>
+                        <li>
+                            <a href="<?= base_url('/admin/orderdetail') ?>"><i class="menu-icon fa fa-table"></i>Order Detail</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if ($level === "Gudang") : ?>
+                        <li>
+                            <a href="<?= base_url('/admin/kategori') ?>"><i class="menu-icon fa fa-table"></i>Kategori</a>
+                        </li>
+                        <li>
+                            <a href="<?= base_url('/admin/menu') ?>"><i class="menu-icon fa fa-table"></i>Menu</a>
+                        </li>
+                    <?php endif; ?>
 
                 </ul>
             </div>
@@ -71,21 +94,24 @@
             <div class="top-right">
                 <div class="header-menu">
                     <div class="header-left">
-                        <div class="user-area mt-3">
-                            <p>User : 
-                            <?php
-                            if (!empty(session()->get('user'))) {
-                                echo session()->get('user');
-                            }
-                            ?></p>
+                        <div class="user-area mt-1">
+                            <a class="nav-link btn btn-primary" href="<?= base_url('admin/login/logout') ?>">Logout</a>
                         </div>
                         <div class="user-area mt-3">
-                            <p>Email : 
-                            <?php
-                            if (!empty(session()->get('email'))) {
-                                echo session()->get('email');
-                            }
-                            ?></p>
+                            <p>User :
+                                <?php
+                                if (!empty(session()->get('user'))) {
+                                    echo session()->get('user');
+                                }
+                                ?></p>
+                        </div>
+                        <div class="user-area mt-3">
+                            <p>Email :
+                                <?php
+                                if (!empty(session()->get('email'))) {
+                                    echo session()->get('email');
+                                }
+                                ?></p>
                         </div>
                         <div class="user-area mt-3">
                             <p>Level :
@@ -96,6 +122,7 @@
                                 }
                                 ?></p>
                         </div>
+
 
                     </div>
 
