@@ -15,12 +15,12 @@ class Menu_M extends Model
     ];
     protected $validationMessages = [
         'menu'        => [
-            'is_unique' => 'Maaf. Menu sudah digunakan mohon buat menu yang lain.',
+            'is_unique' => 'sudah digunakan mohon buat menu yang lain.',
             'alpha_numeric_space' => 'Maaf. Tidak boleh menggunakan symbol.',
-            'min_length' => 'Maaf. Minimal Pengisian 3 huruf.'
+            'min_length' => 'Minimal Pengisian 3 huruf.'
         ],
         'harga'        => [
-            'numeric' => 'Harus angka'
+            'numeric' => 'harus angka'
         ],
 
     ];

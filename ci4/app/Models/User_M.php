@@ -11,16 +11,17 @@ class User_M extends Model
   
     protected $validationRules    = [
         'user' => 'alpha_numeric_space|min_length[3]|is_unique[tbluser.user]',
-        'email' => 'valid_email'
+        'email' => 'valid_email|is_unique[tbluser.user]'
     ];
     protected $validationMessages = [
         'user'        => [
-            'is_unique' => 'Maaf. User sudah digunakan mohon buat user yang lain.',
-            'alpha_numeric_space' => 'Maaf. Tidak boleh menggunakan symbol.',
-            'min_length' => 'Maaf. Minimal Pengisian 3 huruf.'
+            'is_unique' => 'user sudah digunakan mohon buat user yang lain.',
+            'alpha_numeric_space' => 'tidak boleh menggunakan symbol.',
+            'min_length' => 'minimal Pengisian 3 huruf.'
         ],
         'email'        => [
             'valid_email' => 'Email Salah',
+            'is_unique' => 'Email sudah digunakan mohon buat user yang lain.'
         
         ],
 
