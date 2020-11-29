@@ -30,6 +30,7 @@
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
                 <ul class="nav navbar-nav">
+                    <?php $level = session()->get('level'); ?>
                     <?php if ($level === "Admin") : ?>
                         <li>
                             <a href="<?= base_url('admin') ?>"><i class="menu-icon fa fa-laptop"></i>Dashboard </a>
